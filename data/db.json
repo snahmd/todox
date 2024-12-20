@@ -1,0 +1,40 @@
+{
+    "todos": [
+      {
+        "id": 1,
+        "baslik": "Todo 1",
+        "aciklama": "Todo 1 Açıklama",
+        "durum": "acil",
+        "kullanici_email": "luffy@gmail.com"
+      },
+      {
+        "id": 2,
+        "baslik": "Todo 2",
+        "aciklama": "Todo 2 Açıklama",
+        "durum": "normal",
+        "kullanici_email": "luffy@gmail.com"
+      },
+      {
+        "id": 3,
+        "baslik": "Todo 3",
+        "aciklama": "Todo 3 Açıklama",
+        "durum": "acil",
+        "kullanici_email": "luffy@gmail.com"
+      },
+      {
+        "id": 4,
+        "baslik": "Todo 4",
+        "aciklama": "Todo 4 Açıklama",
+        "durum": "acil",
+        "kullanici_email": "luffy@gmail.com"
+      },
+      {
+        "id": 5,
+        "baslik": "Todo 5",
+        "aciklama": "Todo 5 Açıklama",
+        "durum": "normal",
+        "kullanici_email": "luffy@gmail.com"
+      }
+    ]
+  }
+  
