@@ -1,9 +1,12 @@
 import React from 'react'
 
 async function fetchTodos() {
-  const res = await fetch('http://localhost:4000/todos')
-  const data =  await res.json()
-  return data
+  const res = await fetch('http://localhost:4000/todos', {
+    next:{
+      revalidate:15  
+    }
+  })
+  return res.json()
 }
 
 export default async function TodoList() {
