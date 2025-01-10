@@ -126,3 +126,6 @@ form button {
   @apply absolute top-0 right-0
       rounded-tl-md;
 }
+.hareket{
+  @apply animate-pulse;
+}

@@ -19,8 +19,8 @@ export default async function TodoList() {
                 <Link href={`/todos/${todo.id}`}>
                 <h3>{todo.baslik}</h3>
                 <p>{todo.aciklama.slice(0,200)}...</p>
-                <div className={`pill ${todo.durum}`}>
-                    {todo.durum}
+                <div className={`pill ${todo.durum} ${todo.durum=="acil" ? "hareket" : ""}`}>
+		              {todo.durum}
                 </div>
                 </Link>
             </div>

@@ -1,9 +1,27 @@
+import { notFound } from "next/navigation"
+
+export const dynamicParams = true 
+
+export async function generateStaticParams() {
+    const res = await fetch('http://localhost:4000/todos')
+  
+    const todos = await res.json()
+   
+    return todos.map((todo) => ({
+      id: todo.id
+    }))
+  }
+  
+
 async function getTodo(id) {
     const res = await fetch(`http://localhost:4000/todos/${id}`, {
         next:{
             revalidate:15
         }
     })
+    if (!res.ok) {
+        notFound()
+      }
     return res.json()
 }
 
