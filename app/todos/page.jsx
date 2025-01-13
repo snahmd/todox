@@ -1,4 +1,6 @@
+import Loading from "../loading"
 import TodoList from "./TodoList"
+import { Suspense } from 'react'
 
 export default function Todos() {
   return (
@@ -9,7 +11,9 @@ export default function Todos() {
             <p><small>Aktif olan yapilacaklar</small></p>
           </div>
         </nav>
-        <TodoList />
+        <Suspense fallback={<Loading />}>
+          <TodoList />
+        </Suspense>
     </main>
   )
 }
