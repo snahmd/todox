@@ -2,19 +2,39 @@
 "use client"
 
 import { useState } from "react"
+import { useRouter } from "next/navigation"
 
 export default function CreateForm() {
-  
+ 
 
   const [baslik, setBaslik] = useState('')
   const [aciklama, setAciklama] = useState('')
   const [durum, setDurum] = useState('normal')
   const [isLoading, setIsLoading] = useState(false)
 
-  
+  const router = useRouter()
+
+  const handleSubmit = async (e)  => {
+    e.preventDefault()
+    setIsLoading(true)
+
+    const yeniTodo = { baslik, aciklama, durum, user_email: 'luffy@gmail.com' }
+
+    const res = await fetch('http://localhost:4000/todos', {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(yeniTodo)
+    })
+
+    if (res.status === 201) {
+      router.refresh()
+      router.push('/todos')
+    }
+    
+  }
 
   return (
-    <form className="w-1/2">
+    <form onSubmit={handleSubmit} className="w-1/2">
       <label>
         <span>Başlık:</span>
         <input
